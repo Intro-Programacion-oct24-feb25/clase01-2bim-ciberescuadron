@@ -17,7 +17,7 @@ public class Ejemplo01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String cadenaFinal = "";
+        String cadenaFinal = "   ";
         for (int i = 1; i <= 10; i++) {
             
             cadenaFinal = String.format("%s%d", 

@@ -5,6 +5,9 @@
  */
 package Paquete05;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  *
  * @author reroes
@@ -15,20 +18,31 @@ public class Ejemplo001 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String cadenaFinal = "";
-        for (int i = 1; i <= 10; i++) {
-            
-            cadenaFinal = String.format("%s%d", 
-                    cadenaFinal,i);
+        Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
+        int limite_tabla = 12;
+        int contador = 1;
+        int operacion;
+        int tabla;
+
+        System.out.println("Ingrese el número de tabla a generar");
+        tabla = entrada.nextInt();
+
+        String cadena = "";
+        cadena = String.format("%sTabla de multiplicar\n", cadena);
+
+        while (contador <= limite_tabla) {
+            operacion = tabla * contador;
+
+            cadena = String.format("%s%d*%d=%d\n",
+                    cadena,
+                    tabla,
+                    contador,
+                    operacion);
+            contador = contador + 1;
         }
-        
-        for (int i = 1; i < 11; i++) {
-            cadenaFinal = String.format("%s%d", 
-                    cadenaFinal,i);
-        }
-        
-        System.out.printf("%s", cadenaFinal);
+
+        System.out.printf("%s\n", cadena);
 
     }
-
 }
